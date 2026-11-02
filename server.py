@@ -1172,6 +1172,9 @@ class Api:
                 raise ApiError(404, 'Unknown address')
             if not prepared:
                 if not PG:
+                    # No database yet: the app runs as a demo, with sample data kept in each visitor's own browser.
+                    if path == '/api/status':
+                        return self.send_json(200, {'shared': False, 'demo': True})
                     raise ApiError(503, 'No database is connected. Add DATABASE_URL to this project (see VERCEL.md).')
                 prepare_db()
             handler(self)

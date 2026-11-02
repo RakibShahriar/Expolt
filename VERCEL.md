@@ -11,6 +11,14 @@ because Vercel does not keep files.
 - **Database:** you need a Postgres database in **Singapore**, the same region this project runs in (`sin1`). Neon is the
   simplest, because it can be added from inside Vercel. Supabase also works.
 
+## Showing a demo without a database
+
+If no database is connected, the site opens straight into a demo with sample data and no sign-in, as the Managing
+Director. Import the project into Vercel (step 1 below) and stop there.
+
+- Each visitor gets their own copy, kept in their own browser. Nobody sees anyone else's changes, and nothing is saved online.
+- **Do not enter real business data in the demo.** Connect a database first (steps 2 to 5).
+
 ## Deploy it
 
 1. **Create the project.** Put this folder in a private GitHub repository and import it at https://vercel.com/new, or
@@ -66,7 +74,7 @@ take longer to appear.
 
 | Setting | What it does | If not set |
 |---|---|---|
-| `DATABASE_URL` (or `POSTGRES_URL`) | The database address. **Required.** | The app shows that no database is connected |
+| `DATABASE_URL` (or `POSTGRES_URL`) | The database address. **Required for real use.** | The site runs as a demo in each visitor's browser |
 | `NA_MIN_PIN` | Shortest PIN allowed, 4 to 8 digits | 6 |
 | `NA_POLL_MS` | Milliseconds between checks for changes | 5000 |
 | `NA_TZ` | Time zone, in POSIX form | Bangladesh (`<+06>-6`) |

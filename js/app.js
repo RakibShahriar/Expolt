@@ -316,7 +316,8 @@
       catch (e) { document.getElementById('app').innerHTML = `<div class="auth-screen"><div class="auth-card card"><h2>Cannot load the shared data</h2><p class="muted">${esc(e.message)}</p><button class="btn btn-primary btn-block mt-24" onclick="location.reload()">Try again</button></div></div>`; return; }
     } else {
       const had = NA.load();
-      if (!had) { NA.reset(false); NA.ui.toast('A new, empty system. Start in Settings: company details, then car models and prices', 'info'); }
+      const demo = !!(NA.sync.status && NA.sync.status.demo);   // online with no database connected yet
+      if (!had) { NA.reset(demo); NA.ui.toast(demo ? 'Demo system with sample data. Changes stay in this browser only' : 'A new, empty system. Start in Settings: company details, then car models and prices', 'info'); }
     }
     upgradeData();
     shell();
