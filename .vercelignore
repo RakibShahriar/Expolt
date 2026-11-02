@@ -1,0 +1,14 @@
+# Never upload business data or secrets.
+data/
+*.sqlite
+*.sqlite-*
+.env*
+
+# Only for running on an office computer.
+*.bat
+*.command
+*.zip
+HOSTING.md
+README.md
+VERCEL.md
+public/

@@ -1,0 +1,10 @@
+# Business data and secrets stay out of version control.
+data/
+*.sqlite
+*.sqlite-*
+.env*
+
+.vercel/
+public/
+__pycache__/
+*.zip

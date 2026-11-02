@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="light dark" />
+  <title>Noor Autos</title>
+  <link rel="icon" href="assets/noor-logo.png" />
+  <script>
+    /* Apply the saved appearance before anything is drawn (no flash). */
+    try { var t = localStorage.getItem('noor-dms-theme'); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <!-- Inter is only a fallback for Windows (Macs and iPhones use San Francisco); it never blocks the page. -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <link rel="stylesheet" href="css/app.css?v=2.1" />
+</head>
+<body>
+  <div id="app" class="app"></div>
+
+  <!-- Foundation (order matters) -->
+  <script src="js/core.js?v=2.1"></script>
+  <script src="js/access.js?v=2.1"></script>
+  <script src="js/approvals.js?v=2.1"></script>
+  <script src="js/seed.js?v=2.1"></script>
+  <script src="js/sync.js?v=2.1"></script>
+
+  <!-- Screens: each file registers itself with NA.page({...}) -->
+  <script src="js/pages/dashboard.js?v=2.1"></script>
+  <script src="js/pages/approvals.js?v=2.1"></script>
+  <script src="js/pages/process.js?v=2.1"></script>
+  <script src="js/pages/leads.js?v=2.1"></script>
+  <script src="js/pages/customers.js?v=2.1"></script>
+  <script src="js/pages/sales.js?v=2.1"></script>
+  <script src="js/pages/procurement.js?v=2.1"></script>
+  <script src="js/pages/inventory.js?v=2.1"></script>
+  <script src="js/pages/service.js?v=2.1"></script>
+  <script src="js/pages/parts.js?v=2.1"></script>
+  <script src="js/pages/finance.js?v=2.1"></script>
+  <script src="js/pages/admin.js?v=2.1"></script>
+  <script src="js/pages/reports.js?v=2.1"></script>
+  <script src="js/pages/settings.js?v=2.1"></script>
+
+  <!-- Shell + start-up -->
+  <script src="js/app.js?v=2.1"></script>
+</body>
+</html>
